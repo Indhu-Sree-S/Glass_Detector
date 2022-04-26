@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/templates/images/icon.png"/>
+    <title>Glass Detector</title>
+    <style>
+        body {background-color: rgb(178, 218, 204);}
+        .container {
+            background-color: gainsboro;            
+            text-align: center;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'home' %}"><b>Home</b></a>
+    <a href="{% url 'logout' %}"><b>Logout</b></a>
+    <h1 style="text-align: center;">Result</h1>
+
+    <div class="container">
+        <h3 style="margin-top: 50px;">The data you entered are : {{lis}}</h3>
+
+        <h3>The Category of the Glass is {{ans}}</h3>
+        <pre>
+            Type of glass: (class attribute)
+            <div style="text-align: left; margin-left: 200px;">
+                1 Building Windows Float Processed 
+                2 Building Windows Non Float Processed 
+                3 Vehicle windows Float Processed
+                4 Vehicle Windows Non  Float Processed 
+                5 Containers
+                6 Tableware
+                7 Headlamps
+            </div>
+                
+        </pre>
+    </div>
+
+    
+
+    
+</body>
+</html>

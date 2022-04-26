@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/templates/images/icon.png"/>
+    <title>Glass Detector</title>
+    <style>
+        body {background-color: powderblue;}
+        
+        .container01{
+            margin-top: 40px;
+            background-color: gainsboro;            
+            text-align: center;
+            text-align: center;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Glass Detector</h1>
+    <div class="container01" style="margin-top: 20px;">
+        <form  action="{% url 'home' %}">
+
+            {% csrf_token %}
+            <div style="margin-top: 20px;" >
+                Username: <input type="text" required name="username"><br><br>
+                Password: <input type="password" required name="password">
+            </div>
+            <button style="margin-top: 40px; background-color: rgb(250, 3, 3); " size="large" type="submit" name="" value="submit"><b>LOGIN</b></button>
+        </form>
+    </div>
+
+    
+</body>
+</html>

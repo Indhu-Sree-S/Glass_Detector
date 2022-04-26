@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/templates/images/icon.png"/>
+    <title>Glass Detector</title>
+    <style>
+        body {background-color: powderblue;}
+        .container {
+            background-color: gainsboro;            
+            text-align: center;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+        .container01{
+            margin-top: 40px;
+            text-align: center;
+        }
+        /* Tooltip container */
+        .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+        
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+        visibility: visible;
+        }
+    </style>
+</head>
+<body >
+    <h1 style="text-align: center;">Glass Detector</h1>
+    <h3 style="text-align: center;">Enter the Following details to find the Glass type</h3>
+    
+    <div class="container01" style="margin-top: 20px;">
+        <form  action="{% url 'result' %}">
+
+            {% csrf_token %}
+            <div class="container">
+                <div class="tooltip" style="margin-top: 30px">
+                    RI: <input type="number" [min]=0  required name="RI">
+                    <span class="tooltiptext">Refractive Index</span> 
+                </div><br> <br>
+                <div class="tooltip">
+                    Na: <input type="number" [min]=0 required name="Na">
+                    <span class="tooltiptext">Sodium (unit measurement: weight percent in corresponding oxide, as are attributes 4-10)</span> 
+                </div> <br> <br>
+                <div class="tooltip">
+                    Mg: <input type="number" [min]=0 required name="Mg">
+                    <span class="tooltiptext"> Magnesium</span>  
+                </div><br> <br>
+                <div class="tooltip">
+                    Al: <input type="number" [min]=0 required name="Al">
+                    <span class="tooltiptext">Aluminum</span>  
+                </div><br> <br>
+                <div class="tooltip">
+                    Si: <input type="number" [min]=0 required name="Si">
+                    <span class="tooltiptext">Silicon</span> 
+                </div> <br> <br>
+                <div class="tooltip">
+                    K: <input type="number" [min]=0 required name="K">
+                    <span class="tooltiptext">Potassium</span>  
+                </div><br> <br>
+                <div class="tooltip">
+                    Ca: <input type="number" [min]=0 required name="Ca">
+                    <span class="tooltiptext">Calcium</span>  
+                </div><br> <br>
+                <div class="tooltip">
+                    Ba: <input type="number" [min]=0 required name="Ba">
+                    <span class="tooltiptext">Barium</span>  
+                </div><br> <br>
+                <div class="tooltip">
+                    Fe: <input type="number" [min]=0 required name="Fe">
+                <span class="tooltiptext">Iron</span>  
+                </div>     <br> <br>
+            </div>
+            
+            
+            
+            
+    
+            <button style="margin-top: 40px; background-color: rgb(250, 3, 3); " size="large" type="submit" name="" value="submit"><b>Find</b></button>
+    
+        </form>
+    </div>
+
+    
+</body>
+</html>
